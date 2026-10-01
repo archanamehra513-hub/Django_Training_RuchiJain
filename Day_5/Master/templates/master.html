@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title> </title>
+<link rel="stylesheet" href="{% static "mycss.css" %}">
+</head>
+<body>
+
+    <h1 style="color: blue; font-family : arial; sans-serif;font-size: 30px;">
+        Sagar Group of Institutions
+    </h1>
+    <div>
+        <img src = {% static 'sistec.jpg.jpeg' %} alt = "Sagar Group of Institutions" style= "max-width: 100%; height: auto;" height = "300">
+    </div>
+{% block content %}
+{% endblock %}
+<div>
+    <h1>Archana Mehra</h1>
+</div>
+</body>
+</html>

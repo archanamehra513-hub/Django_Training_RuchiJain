@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LNCT | College Connect</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #140b05;
+            color: white;
+        }
+
+        nav {
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #1c0f08;
+            border-bottom: 1px solid #4a2410;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #fb923c;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        nav a:hover {
+            color: #fb923c;
+        }
+
+        .hero {
+            min-height: 550px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            background:
+                radial-gradient(circle,
+                #7c2d12,
+                #140b05 65%);
+        }
+
+        .hero h1 {
+            font-size: 80px;
+            color: #fb923c;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+            margin-top: 15px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 20px auto;
+            color: #aaa;
+            line-height: 1.7;
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 90px 25px;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .heading h2 {
+            font-size: 42px;
+        }
+
+        .heading p {
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            padding: 35px;
+            background: #211108;
+            border: 1px solid #4a2410;
+            border-radius: 22px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #fb923c;
+            box-shadow: 0 15px 40px #0008;
+        }
+
+        .icon {
+            font-size: 42px;
+        }
+
+        .card h3 {
+            margin: 15px 0 10px;
+        }
+
+        .card p {
+            color: #999;
+            line-height: 1.6;
+        }
+
+        .number {
+            color: #fb923c;
+            font-size: 14px;
+            letter-spacing: 3px;
+        }
+
+        footer {
+            padding: 30px;
+            text-align: center;
+            color: #777;
+            border-top: 1px solid #3a1d0d;
+        }
+
+        @media(max-width:800px) {
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 55px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="logo">
+            🎓 College<span>Connect</span>
+        </div>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/sistec/">SISTec</a>
+            <a href="/lnct/">LNCT</a>
+            <a href="/oist/">OIST</a>
+        </div>
+
+    </nav>
+
+
+    <section class="hero">
+
+        <div>
+
+            <div class="number">LNCT CAMPUS</div>
+
+            <h1>LNCT</h1>
+
+            <h2>Learn • Perform • Achieve</h2>
+
+            <p>
+                Discover an environment where education,
+                practical learning and professional development
+                come together.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="section">
+
+        <div class="heading">
+
+            <h2>The LNCT Experience</h2>
+
+            <p>
+                Opportunities that help students move forward.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="icon">📚</div>
+
+                <h3>Academic Learning</h3>
+
+                <p>
+                    Build strong fundamentals through structured
+                    academic learning.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">🔬</div>
+
+                <h3>Practical Skills</h3>
+
+                <p>
+                    Connect classroom concepts with practical
+                    projects and experiences.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">🎯</div>
+
+                <h3>Career Growth</h3>
+
+                <p>
+                    Develop skills and confidence for your
+                    professional journey.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        LNCT | CollegeConnect © 2026
+    </footer>
+
+</body>
+
+</html>

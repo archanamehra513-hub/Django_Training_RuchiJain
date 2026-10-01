@@ -1,0 +1,416 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Element Information</title>
+
+    <style>
+
+        /* ---------- RESET ---------- */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* ---------- BODY ---------- */
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            min-height: 100vh;
+            padding: 50px 20px;
+
+            background:
+                radial-gradient(circle at 10% 20%, #ff6ec4 0%, transparent 30%),
+                radial-gradient(circle at 90% 80%, #4facfe 0%, transparent 30%),
+                linear-gradient(135deg, #141e30, #243b55);
+
+            color: #222;
+            overflow-x: hidden;
+        }
+
+
+        /* ---------- CONTAINER ---------- */
+
+        .container {
+            width: 100%;
+            max-width: 700px;
+            margin: auto;
+
+            padding: 40px;
+
+            background: rgba(255, 255, 255, 0.94);
+            border-radius: 28px;
+
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, 0.35),
+                0 0 40px rgba(255, 255, 255, 0.08);
+
+            backdrop-filter: blur(15px);
+
+            animation: fadeIn 0.8s ease;
+        }
+
+
+        /* ---------- ANIMATION ---------- */
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* ---------- HEADER ---------- */
+
+        .header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .icon {
+            width: 75px;
+            height: 75px;
+
+            margin: 0 auto 15px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            font-size: 35px;
+
+            background: linear-gradient(135deg, #667eea, #764ba2);
+
+            box-shadow:
+                0 10px 25px rgba(102, 126, 234, 0.4);
+
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-7px);
+            }
+        }
+
+
+        h1 {
+            font-size: 32px;
+            color: #202020;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 20px;
+
+            background: linear-gradient(
+                90deg,
+                #667eea,
+                #764ba2,
+                #ff6ec4
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            margin-bottom: 10px;
+        }
+
+        .description {
+            color: #777;
+            font-size: 14px;
+        }
+
+
+        /* ---------- FORM ---------- */
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+
+        /* ---------- FORM GROUP ---------- */
+
+        .form-group {
+            position: relative;
+        }
+
+        label {
+            display: block;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            color: #444;
+
+            margin-bottom: 8px;
+        }
+
+
+        /* ---------- INPUT ---------- */
+
+        input[type="number"] {
+            width: 100%;
+
+            padding: 14px 15px;
+
+            border: 2px solid #e4e4e4;
+
+            border-radius: 12px;
+
+            background: #f9f9ff;
+
+            color: #333;
+
+            font-size: 15px;
+
+            outline: none;
+
+            transition: all 0.3s ease;
+        }
+
+
+        input[type="number"]:hover {
+            border-color: #b6bdf5;
+            background: #ffffff;
+        }
+
+
+        input[type="number"]:focus {
+            border-color: #667eea;
+
+            background: white;
+
+            box-shadow:
+                0 0 0 4px rgba(102, 126, 234, 0.12);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* ---------- SUBMIT BUTTON ---------- */
+
+        input[type="submit"] {
+            grid-column: 1 / -1;
+
+            width: 100%;
+
+            padding: 16px;
+
+            margin-top: 5px;
+
+            border: none;
+            border-radius: 14px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #667eea,
+                    #764ba2,
+                    #ff6ec4
+                );
+
+            color: white;
+
+            font-size: 17px;
+            font-weight: 700;
+
+            letter-spacing: 0.5px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 25px rgba(102, 126, 234, 0.35);
+
+            transition: all 0.3s ease;
+        }
+
+
+        input[type="submit"]:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 15px 30px rgba(102, 126, 234, 0.45);
+
+            filter: brightness(1.08);
+        }
+
+
+        input[type="submit"]:active {
+            transform: translateY(-1px);
+        }
+
+
+        /* ---------- FOOTER ---------- */
+
+        .footer {
+            text-align: center;
+
+            margin-top: 30px;
+            padding-top: 20px;
+
+            border-top: 1px solid #eeeeee;
+
+            color: #999;
+
+            font-size: 13px;
+        }
+
+
+        /* ---------- RESPONSIVE ---------- */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 25px 12px;
+            }
+
+            .container {
+                padding: 25px 20px;
+                border-radius: 20px;
+            }
+
+            form {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            input[type="submit"] {
+                grid-column: auto;
+            }
+
+            h1 {
+                font-size: 27px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+
+        <div class="header">
+
+            <div class="icon">
+                🔬
+            </div>
+
+            <h1>My Website</h1>
+
+            <h2>Element Information Form</h2>
+
+            <p class="description">
+                Enter the required values to get the prediction
+            </p>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <form action="{% url 'result' %}" method="GET">
+
+            {% csrf_token %}
+
+
+            <div class="form-group">
+                <label>RI</label>
+                <input type="number" name="RI" step="any" placeholder="Enter RI" required>
+            </div>
+
+
+            <div class="form-group">
+                <label>Na</label>
+                <input type="number" name="Na" step="any" placeholder="Enter Na" required>
+            </div>
+
+
+            <div class="form-group">
+                <label>Mg</label>
+                <input type="number" name="Mg" step="any" placeholder="Enter Mg" required>
+            </div>
+
+
+            <div class="form-group">
+                <label>Al</label>
+                <input type="number" name="Al" step="any" placeholder="Enter Al" required>
+            </div>
+
+
+            <div class="form-group">
+                <label>Si</label>
+                <input type="number" name="Si" step="any" placeholder="Enter Si" required>
+            </div>
+
+
+            <div class="form-group">
+                <label>K</label>
+                <input type="number" name="K" step="any" placeholder="Enter K" required>
+            </div>
+
+
+            <div class="form-group">
+                <label>Ca</label>
+                <input type="number" name="Ca" step="any" placeholder="Enter Ca" required>
+            </div>
+
+
+            <div class="form-group">
+                <label>Ba</label>
+                <input type="number" name="Ba" step="any" placeholder="Enter Ba" required>
+            </div>
+
+
+            <div class="form-group">
+                <label>Fe</label>
+                <input type="number" name="Fe" step="any" placeholder="Enter Fe" required>
+            </div>
+
+
+            <input type="submit" value="🔍 Get Prediction">
+
+        </form>
+
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+            © 2026 My Website | Element Prediction System
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+```

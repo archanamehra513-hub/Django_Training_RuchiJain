@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+     <form action="{% url 'updateEmployee'%}" method="post">
+         {% csrf_token %}
+         <input type="hidden" name="id" value={{employee.id}}></input>
+         <div>
+            <label for="eno">Employee Number</label>
+         </div>
+         <div>
+            <input type="number" name="eno" id="eno" value="{{employee.eno}}">
+         </div>
+         <div>
+            <label for="ename">Employee Name</label>
+         </div>
+         <div>
+            <input type="text" name="ename" id="ename" value="{{employee.ename}}">
+         </div>
+         <div>
+            <label for="eno">Employee Salary</label>
+         </div>
+         <div>
+            <input type="number" name="esal" id="esal" value="{{employee.esal}}">
+         </div>
+         <div>
+            <input type="submit" value="Update">
+         </div>
+     </form>
+    </body>
+</html>

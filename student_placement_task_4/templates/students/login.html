@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="card">
+  <h2>Student Login</h2>
+  <form method="post">{% csrf_token %}
+    {% include "students/_form_fields.html" %}
+    <button class="btn block" type="submit">Login</button>
+  </form>
+  <p class="muted center">New user? <a href="{% url 'register' %}">Register here</a></p>
+</div>
+{% endblock %}

@@ -1,0 +1,1132 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Glass Prediction | AI System</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            font-family: "Segoe UI", Arial, sans-serif;
+
+            min-height: 100vh;
+
+            background:
+                radial-gradient(circle at 10% 10%, #5146e5 0%, transparent 25%),
+                radial-gradient(circle at 90% 90%, #d946ef 0%, transparent 25%),
+                linear-gradient(135deg, #09091b, #11112d, #09091b);
+
+            color: white;
+
+            padding: 25px;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            padding: 15px 22px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            border-radius: 18px;
+
+            background: rgba(255,255,255,0.08);
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            backdrop-filter: blur(18px);
+
+            margin-bottom: 25px;
+        }
+
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-size: 20px;
+
+            font-weight: 700;
+        }
+
+
+        .logo-icon {
+
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(135deg, #6366f1, #d946ef);
+
+            box-shadow:
+                0 0 20px rgba(99,102,241,0.4);
+        }
+
+
+        .status {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color: #9ca3af;
+
+            font-size: 13px;
+        }
+
+
+        .status-dot {
+
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: #22c55e;
+
+            box-shadow:
+                0 0 10px #22c55e;
+        }
+
+
+        /* ================= MAIN ================= */
+
+        .main {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 0.8fr 1.5fr;
+
+            gap: 22px;
+        }
+
+
+        /* ================= LEFT PANEL ================= */
+
+        .side-panel {
+
+            padding: 30px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.10),
+                    rgba(255,255,255,0.04)
+                );
+
+            border:
+                1px solid rgba(255,255,255,0.12);
+
+            backdrop-filter: blur(20px);
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .side-panel::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            border-radius: 50%;
+
+            background: #6366f1;
+
+            filter: blur(90px);
+
+            opacity: 0.25;
+
+            top: -70px;
+            left: -70px;
+        }
+
+
+        .science-icon {
+
+            width: 90px;
+            height: 90px;
+
+            margin: 20px auto 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 25px;
+
+            font-size: 45px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6366f1,
+                    #8b5cf6,
+                    #d946ef
+                );
+
+            box-shadow:
+                0 15px 40px
+                rgba(99,102,241,0.35);
+
+            animation: floating 3s infinite ease-in-out;
+        }
+
+
+        @keyframes floating {
+
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+
+        .side-panel h1 {
+
+            text-align: center;
+
+            font-size: 28px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .side-panel .intro {
+
+            text-align: center;
+
+            color: #9ca3af;
+
+            line-height: 1.7;
+
+            font-size: 14px;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* INFO ITEMS */
+
+        .info-item {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            padding: 13px;
+
+            margin-bottom: 10px;
+
+            border-radius: 13px;
+
+            background:
+                rgba(255,255,255,0.05);
+
+            border:
+                1px solid rgba(255,255,255,0.06);
+
+            transition: 0.3s;
+        }
+
+
+        .info-item:hover {
+
+            transform: translateX(5px);
+
+            background:
+                rgba(255,255,255,0.09);
+        }
+
+
+        .info-icon {
+
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background:
+                rgba(99,102,241,0.18);
+        }
+
+
+        .info-text strong {
+
+            display: block;
+
+            font-size: 13px;
+
+            margin-bottom: 3px;
+        }
+
+
+        .info-text span {
+
+            color: #8d8b9d;
+
+            font-size: 11px;
+        }
+
+
+        /* ================= FORM PANEL ================= */
+
+        .form-panel {
+
+            padding: 30px;
+
+            border-radius: 25px;
+
+            background:
+                rgba(255,255,255,0.075);
+
+            border:
+                1px solid rgba(255,255,255,0.13);
+
+            backdrop-filter: blur(20px);
+        }
+
+
+        .form-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 25px;
+        }
+
+
+        .form-header h2 {
+
+            font-size: 24px;
+        }
+
+
+        .form-header p {
+
+            color: #858394;
+
+            font-size: 12px;
+
+            margin-top: 5px;
+        }
+
+
+        .model-badge {
+
+            padding: 7px 11px;
+
+            border-radius: 20px;
+
+            color: #a5f3fc;
+
+            background:
+                rgba(34,211,238,0.08);
+
+            border:
+                1px solid rgba(34,211,238,0.2);
+
+            font-size: 10px;
+
+            white-space: nowrap;
+        }
+
+
+        /* ================= FORM GRID ================= */
+
+        form {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            column-gap: 18px;
+
+            row-gap: 14px;
+        }
+
+
+        .input-group {
+
+            position: relative;
+        }
+
+
+        .input-group label {
+
+            display: block;
+
+            color: #c9c7d5;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            margin-bottom: 7px;
+        }
+
+
+        .input-wrapper {
+
+            position: relative;
+        }
+
+
+        .input-icon {
+
+            position: absolute;
+
+            left: 13px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            font-size: 15px;
+
+            opacity: 0.7;
+        }
+
+
+        input[type="number"] {
+
+            width: 100%;
+
+            height: 48px;
+
+            padding:
+                0 14px 0 40px;
+
+            border-radius: 12px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.10);
+
+            outline: none;
+
+            color: white;
+
+            background:
+                rgba(0,0,0,0.20);
+
+            font-size: 14px;
+
+            transition: 0.25s;
+        }
+
+
+        input[type="number"]::placeholder {
+
+            color: #626071;
+        }
+
+
+        input[type="number"]:hover {
+
+            border-color:
+                rgba(139,92,246,0.5);
+        }
+
+
+        input[type="number"]:focus {
+
+            border-color: #8b5cf6;
+
+            background:
+                rgba(139,92,246,0.08);
+
+            box-shadow:
+                0 0 0 3px
+                rgba(139,92,246,0.12);
+        }
+
+
+        /* ================= PREDICT BUTTON ================= */
+
+        .predict-button {
+
+            grid-column: 1 / -1;
+
+            height: 54px;
+
+            margin-top: 8px;
+
+            border: none;
+
+            border-radius: 14px;
+
+            color: white;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.3px;
+
+            cursor: pointer;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6366f1,
+                    #8b5cf6,
+                    #d946ef
+                );
+
+            box-shadow:
+                0 12px 30px
+                rgba(99,102,241,0.28);
+
+            transition: 0.3s;
+        }
+
+
+        .predict-button:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 18px 40px
+                rgba(217,70,239,0.35);
+        }
+
+
+        .predict-button:active {
+
+            transform: translateY(0);
+        }
+
+
+        /* ================= RESET BUTTON ================= */
+
+        .reset-button {
+
+            grid-column: 1 / -1;
+
+            height: 42px;
+
+            border-radius: 11px;
+
+            border:
+                1px solid rgba(255,255,255,0.09);
+
+            background:
+                rgba(255,255,255,0.04);
+
+            color: #9997a8;
+
+            cursor: pointer;
+
+            transition: 0.25s;
+        }
+
+
+        .reset-button:hover {
+
+            color: white;
+
+            background:
+                rgba(255,255,255,0.08);
+        }
+
+
+        /* ================= BOTTOM ================= */
+
+        .bottom-note {
+
+            text-align: center;
+
+            margin-top: 20px;
+
+            color: #666477;
+
+            font-size: 11px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 800px) {
+
+            .main {
+
+                grid-template-columns: 1fr;
+            }
+
+            .side-panel {
+                display: none;
+            }
+        }
+
+
+        @media (max-width: 550px) {
+
+            body {
+                padding: 12px;
+            }
+
+            .navbar {
+                margin-bottom: 15px;
+            }
+
+            .form-panel {
+                padding: 20px;
+            }
+
+            form {
+                grid-template-columns: 1fr;
+            }
+
+            .predict-button,
+            .reset-button {
+                grid-column: auto;
+            }
+
+            .form-header {
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .model-badge {
+                display: none;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <div class="navbar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                🔬
+            </div>
+
+            GlassPredict AI
+
+        </div>
+
+
+        <div class="status">
+
+            <span class="status-dot"></span>
+
+            Model Ready
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <div class="main">
+
+
+        <!-- ================= LEFT ================= -->
+
+        <div class="side-panel">
+
+
+            <div class="science-icon">
+                🧪
+            </div>
+
+
+            <h1>
+                Glass Analyzer
+            </h1>
+
+
+            <p class="intro">
+
+                Enter the chemical composition values
+                and let the machine learning model
+                classify the type of glass.
+
+            </p>
+
+
+            <div class="info-item">
+
+                <div class="info-icon">
+                    🤖
+                </div>
+
+                <div class="info-text">
+
+                    <strong>
+                        AI Prediction
+                    </strong>
+
+                    <span>
+                        Machine learning based
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <div class="info-icon">
+                    📊
+                </div>
+
+                <div class="info-text">
+
+                    <strong>
+                        9 Parameters
+                    </strong>
+
+                    <span>
+                        Chemical composition
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <div class="info-icon">
+                    🎯
+                </div>
+
+                <div class="info-text">
+
+                    <strong>
+                        7 Glass Classes
+                    </strong>
+
+                    <span>
+                        Classification categories
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <div class="info-icon">
+                    ⚡
+                </div>
+
+                <div class="info-text">
+
+                    <strong>
+                        Fast Analysis
+                    </strong>
+
+                    <span>
+                        Instant prediction result
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ================= FORM ================= -->
+
+        <div class="form-panel">
+
+
+            <div class="form-header">
+
+                <div>
+
+                    <h2>
+                        🔍 Predict Glass Type
+                    </h2>
+
+                    <p>
+                        Enter all required parameters
+                    </p>
+
+                </div>
+
+
+                <div class="model-badge">
+                    ● MODEL ACTIVE
+                </div>
+
+            </div>
+
+
+
+            <form action="{% url 'result' %}"
+                  method="GET">
+
+
+                <!-- RI -->
+
+                <div class="input-group">
+
+                    <label>
+                        RI — Refractive Index
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            ◈
+                        </span>
+
+                        <input
+                            type="number"
+                            name="RI"
+                            step="any"
+                            placeholder="Enter RI"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Na -->
+
+                <div class="input-group">
+
+                    <label>
+                        Na — Sodium
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            ◉
+                        </span>
+
+                        <input
+                            type="number"
+                            name="Na"
+                            step="any"
+                            placeholder="Enter Na"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Mg -->
+
+                <div class="input-group">
+
+                    <label>
+                        Mg — Magnesium
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            ◉
+                        </span>
+
+                        <input
+                            type="number"
+                            name="Mg"
+                            step="any"
+                            placeholder="Enter Mg"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Al -->
+
+                <div class="input-group">
+
+                    <label>
+                        Al — Aluminum
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            ◉
+                        </span>
+
+                        <input
+                            type="number"
+                            name="Al"
+                            step="any"
+                            placeholder="Enter Al"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Si -->
+
+                <div class="input-group">
+
+                    <label>
+                        Si — Silicon
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            ◉
+                        </span>
+
+                        <input
+                            type="number"
+                            name="Si"
+                            step="any"
+                            placeholder="Enter Si"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- K -->
+
+                <div class="input-group">
+
+                    <label>
+                        K — Potassium
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            ◉
+                        </span>
+
+                        <input
+                            type="number"
+                            name="K"
+                            step="any"
+                            placeholder="Enter K"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Ca -->
+
+                <div class="input-group">
+
+                    <label>
+                        Ca — Calcium
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            ◉
+                        </span>
+
+                        <input
+                            type="number"
+                            name="Ca"
+                            step="any"
+                            placeholder="Enter Ca"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Ba -->
+
+                <div class="input-group">
+
+                    <label>
+                        Ba — Barium
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            ◉
+                        </span>
+
+                        <input
+                            type="number"
+                            name="Ba"
+                            step="any"
+                            placeholder="Enter Ba"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Fe -->
+
+                <div class="input-group">
+
+                    <label>
+                        Fe — Iron
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            ◉
+                        </span>
+
+                        <input
+                            type="number"
+                            name="Fe"
+                            step="any"
+                            placeholder="Enter Fe"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PREDICT -->
+
+                <button
+                    type="submit"
+                    class="predict-button">
+
+                    ✨ ANALYZE & PREDICT GLASS TYPE
+
+                </button>
+
+
+
+                <!-- RESET -->
+
+                <button
+                    type="reset"
+                    class="reset-button">
+
+                    ↻ Clear All Fields
+
+                </button>
+
+
+            </form>
+
+
+            <div class="bottom-note">
+
+                🔒 Your input values are used only for prediction.
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
+```

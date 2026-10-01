@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>New Product</title>
+</head>
+
+<body>
+
+    <form action="{% url 'saveuser' %}" method="post">
+
+        {% csrf_token %}
+
+        <div>
+            <label for="pno">Product offer</label>
+        </div>
+
+        <div>
+            <input type="number" name="poffer" id="poffer">
+        </div>
+
+        <div>
+            <label for="pname">Product Name</label>
+        </div>
+
+        <div>
+            <input type="text" name="pname" id="pname">
+        </div>
+
+        <div>
+            <label for="price">Product Price</label>
+        </div>
+
+        <div>
+            <input type="number" name="price" id="price">
+        </div>
+
+        <div>
+            <input type="submit" value="Save">
+        </div>
+
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Test Paper</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f5f9;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            width: 70%;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px #ccc;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .info {
+            background-color: #eef4ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            color: #2c3e50;
+        }
+
+        .question {
+            background-color: #fafafa;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 90%;
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        input[type="radio"] {
+            margin: 8px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #217dbb;
+        }
+
+        .reset {
+            background-color: #777;
+        }
+
+        .reset:hover {
+            background-color: #555;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📝 Online Test Paper</h1>
+
+    <div class="info">
+        <p><b>Name:</b> ______________________________</p>
+        <p><b>Roll No:</b> ____________________________</p>
+        <p><b>Date:</b> _______________________________</p>
+
+        <p><b>Subject:</b> Computer Science</p>
+        <p><b>Time:</b> 1 Hour &nbsp;&nbsp;&nbsp;
+           <b>Maximum Marks:</b> 30</p>
+    </div>
+
+    <h2>Section A - Multiple Choice Questions</h2>
+
+    <div class="question">
+        <p><b>1. What does HTML stand for?</b></p>
+
+        <input type="radio" name="q1">
+        Hyper Text Markup Language<br>
+
+        <input type="radio" name="q1">
+        High Text Machine Language<br>
+
+        <input type="radio" name="q1">
+        Hyper Tool Markup Language<br>
+
+        <input type="radio" name="q1">
+        Home Text Markup Language
+    </div>
+
+    <div class="question">
+        <p><b>2. Which tag is used to create a heading?</b></p>
+
+        <input type="radio" name="q2">
+        &lt;p&gt;<br>
+
+        <input type="radio" name="q2">
+        &lt;h1&gt;<br>
+
+        <input type="radio" name="q2">
+        &lt;br&gt;<br>
+
+        <input type="radio" name="q2">
+        &lt;img&gt;
+    </div>
+
+    <div class="question">
+        <p><b>3. Which tag is used to create a paragraph?</b></p>
+
+        <input type="radio" name="q3">
+        &lt;p&gt;<br>
+
+        <input type="radio" name="q3">
+        &lt;h1&gt;<br>
+
+        <input type="radio" name="q3">
+        &lt;table&gt;<br>
+
+        <input type="radio" name="q3">
+        &lt;body&gt;
+    </div>
+
+
+    <h2>Section B - Fill in the Blanks</h2>
+
+    <div class="question">
+        <p><b>4. HTML is used to create __________ pages.</b></p>
+        <input type="text" placeholder="Enter your answer">
+    </div>
+
+    <div class="question">
+        <p><b>5. The &lt;br&gt; tag is used to insert a __________.</b></p>
+        <input type="text" placeholder="Enter your answer">
+    </div>
+
+
+    <h2>Section C - Short Answer Questions</h2>
+
+    <div class="question">
+        <p><b>6. What is HTML?</b></p>
+        <textarea rows="4" placeholder="Write your answer here..."></textarea>
+    </div>
+
+    <div class="question">
+        <p><b>7. Write any two HTML tags.</b></p>
+        <textarea rows="4" placeholder="Write your answer here..."></textarea>
+    </div>
+
+    <br>
+
+    <div align="center">
+        <button type="submit">Submit Test</button>
+        &nbsp;
+        <button type="reset" class="reset">Reset</button>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 Computer Science Test</p>
+    </div>
+
+</div>
+
+</body>
+</html>

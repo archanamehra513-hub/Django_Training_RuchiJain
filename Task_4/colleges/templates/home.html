@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Connect | Home</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #080b18;
+            color: white;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 7%;
+            background: rgba(10, 13, 30, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #292d45;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #8b5cf6;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #a78bfa;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 620px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 50px 20px;
+
+            background:
+                radial-gradient(circle at top,
+                #4c1d95,
+                #080b18 60%);
+        }
+
+        .hero small {
+            color: #a78bfa;
+            letter-spacing: 4px;
+        }
+
+        .hero h1 {
+            font-size: 75px;
+            margin: 20px 0;
+
+            background: linear-gradient(
+                90deg,
+                #fff,
+                #a78bfa,
+                #f472b6
+            );
+
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #aaa;
+            font-size: 19px;
+            line-height: 1.7;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(90deg, #7c3aed, #ec4899);
+        }
+
+        /* CARDS */
+
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 90px 25px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .title small {
+            color: #a78bfa;
+            letter-spacing: 3px;
+        }
+
+        .title h2 {
+            font-size: 42px;
+            margin-top: 10px;
+        }
+
+        .title p {
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            padding: 35px;
+            border-radius: 25px;
+            background: #111525;
+            border: 1px solid #292d45;
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #8b5cf6;
+            box-shadow: 0 20px 50px #0008;
+        }
+
+        .icon {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #999;
+            line-height: 1.6;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #a78bfa;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #222;
+            color: #777;
+        }
+
+        @media(max-width:800px) {
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">🎓 College<span>Connect</span></div>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/sistec/">SISTec</a>
+            <a href="/lnct/">LNCT</a>
+            <a href="/oist/">OIST</a>
+        </div>
+    </nav>
+
+
+    <section class="hero">
+
+        <div>
+
+            <small>WELCOME TO COLLEGE CONNECT</small>
+
+            <h1>Explore. Learn.<br>Grow.</h1>
+
+            <p>
+                Discover some of the leading educational institutes
+                and explore their academic environment, opportunities
+                and student life.
+            </p>
+
+            <a href="#colleges" class="btn">
+                Explore Colleges ↓
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <section class="section" id="colleges">
+
+        <div class="title">
+
+            <small>OUR COLLEGES</small>
+
+            <h2>Choose Your Campus</h2>
+
+            <p>
+                Explore each college and discover what makes it unique.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">🏫</div>
+
+                <h3>SISTec</h3>
+
+                <p>
+                    A technology-focused learning environment
+                    encouraging innovation and professional growth.
+                </p>
+
+                <a href="/sistec/">Explore SISTec →</a>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">🎓</div>
+
+                <h3>LNCT</h3>
+
+                <p>
+                    An educational environment focused on
+                    academics, skills and career development.
+                </p>
+
+                <a href="/lnct/">Explore LNCT →</a>
+            </div>
+
+
+            <div class="card">
+                <div class="icon">🏛️</div>
+
+                <h3>OIST</h3>
+
+                <p>
+                    A platform for learning, technology,
+                    personal development and future opportunities.
+                </p>
+
+                <a href="/oist/">Explore OIST →</a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        🎓 CollegeConnect | Learn • Explore • Grow
+    </footer>
+
+</body>
+
+</html>

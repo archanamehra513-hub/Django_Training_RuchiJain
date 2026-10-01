@@ -1,0 +1,120 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Sign Up - Online Testing System</title>
+
+    <link rel="stylesheet"
+          href="{% static 'mycss.css' %}">
+
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+    <h1>
+        Online Testing System
+    </h1>
+
+
+    <div class="auth-card">
+
+        <h2>
+            Create Account
+        </h2>
+
+        <p>
+            Sign up to start your tests.
+        </p>
+
+
+        {% if messages %}
+
+            {% for message in messages %}
+
+                <div class="message">
+                    {{ message }}
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+
+            <label>
+                Name
+            </label>
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                required
+            >
+
+
+            <label>
+                Username
+            </label>
+
+            <input
+                type="text"
+                name="username"
+                placeholder="Choose username"
+                required
+            >
+
+
+            <label>
+                Password
+            </label>
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Create password"
+                required
+            >
+
+
+            <button type="submit">
+                Create Account
+            </button>
+
+        </form>
+
+
+        <p class="bottom-text">
+
+            Already have an account?
+
+            <a href="{% url 'myday:login' %}">
+                Login
+            </a>
+
+        </p>
+
+
+        <a href="{% url 'myday:home' %}">
+            ← Back to Home
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

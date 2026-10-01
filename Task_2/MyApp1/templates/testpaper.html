@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quiz</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6fb;
+            color: #222;
+        }
+
+        /* Header */
+        header {
+            background: #4f46e5;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 25px;
+        }
+
+        .timer {
+            background: white;
+            color: #4f46e5;
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        /* Main container */
+        .container {
+            width: 80%;
+            max-width: 900px;
+            margin: 35px auto;
+        }
+
+        /* Student information */
+        .student-info {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .student-info h2 {
+            margin-top: 0;
+            color: #4f46e5;
+        }
+
+        .inputs {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        input {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 7px;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        /* Progress */
+        .progress-box {
+            margin-bottom: 20px;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 7px;
+        }
+
+        .progress {
+            height: 8px;
+            background: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 30%;
+            height: 100%;
+            background: #4f46e5;
+        }
+
+        /* Question card */
+        .question-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .question-number {
+            color: #4f46e5;
+            font-weight: bold;
+        }
+
+        .question {
+            font-size: 21px;
+            margin: 15px 0 25px;
+            font-weight: bold;
+        }
+
+        /* Options */
+        .option {
+            display: block;
+            padding: 15px;
+            margin: 12px 0;
+            border: 2px solid #e1e1e1;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .option:hover {
+            border-color: #4f46e5;
+            background: #f5f3ff;
+        }
+
+        .option input {
+            width: auto;
+            min-width: auto;
+            margin-right: 10px;
+        }
+
+        /* Buttons */
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .previous {
+            background: #ddd;
+        }
+
+        .next {
+            background: #4f46e5;
+            color: white;
+        }
+
+        .submit {
+            background: #16a34a;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>💻 CodeQuiz</h1>
+        <div class="timer">⏱ 45:00</div>
+    </header>
+
+    <div class="container">
+
+        <!-- Student Information -->
+        <div class="student-info">
+            <h2>Student Information</h2>
+
+            <div class="inputs">
+                <input type="text" placeholder="Enter your name">
+                <input type="text" placeholder="Roll Number">
+                <input type="text" placeholder="Course">
+            </div>
+        </div>
+
+        <!-- Progress -->
+        <div class="progress-box">
+
+            <div class="progress-text">
+                <span>Question 3 of 10</span>
+                <span>30% Completed</span>
+            </div>
+
+            <div class="progress">
+                <div class="progress-bar"></div>
+            </div>
+
+        </div>
+
+        <!-- Question -->
+        <div class="question-card">
+
+            <div class="question-number">
+                QUESTION 03
+            </div>
+
+            <div class="question">
+                Which HTML tag is used to create a hyperlink?
+            </div>
+
+            <label class="option">
+                <input type="radio" name="answer">
+                &lt;link&gt;
+            </label>
+
+            <label class="option">
+                <input type="radio" name="answer">
+                &lt;a&gt;
+            </label>
+
+            <label class="option">
+                <input type="radio" name="answer">
+                &lt;href&gt;
+            </label>
+
+            <label class="option">
+                <input type="radio" name="answer">
+                &lt;url&gt;
+            </label>
+
+            <div class="buttons">
+                <button class="previous">← Previous</button>
+
+                <button class="next">Next →</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        © 2026 CodeQuiz | Online Test Platform
+    </footer>
+
+</body>
+</html>

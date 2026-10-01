@@ -1,0 +1,177 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>
+        Test History
+    </title>
+
+    <link rel="stylesheet"
+          href="{% static 'mycss.css' %}">
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+    <h1>
+        Online Testing System
+    </h1>
+
+
+    <nav>
+
+        <a href="{% url 'myday:home' %}">
+            Home
+        </a>
+
+        <a href="{% url 'myday:logout' %}">
+            Logout
+        </a>
+
+    </nav>
+
+
+    <div class="history-section">
+
+
+        <h2>
+            Your Report Card
+        </h2>
+
+
+        <p class="report-text">
+
+            Hi
+            <strong>
+                {{ user.username }}
+            </strong>,
+
+            you have attempted in total
+
+            <strong>
+                {{ total_tests }} tests
+            </strong>
+
+            and your average score is
+
+            <strong>
+                {{ average_score }}
+            </strong>
+
+            on the scale of 10.
+
+        </p>
+
+
+        {% if results %}
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Date</th>
+
+                        <th>Time</th>
+
+                        <th>Attempt</th>
+
+                        <th>Right</th>
+
+                        <th>Wrong</th>
+
+                        <th>Points</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+
+                    {% for result in results %}
+
+                    <tr>
+
+                        <td>
+                            {{ result.attempted_at|date:"d-m-Y" }}
+                        </td>
+
+                        <td>
+                            {{ result.attempted_at|time:"H:i" }}
+                        </td>
+
+                        <td>
+                            Test {{ result.test_number }}
+                        </td>
+
+                        <td class="right">
+                            {{ result.right_answers }}
+                        </td>
+
+                        <td class="wrong">
+                            {{ result.wrong_answers }}
+                        </td>
+
+                        <td>
+                            {{ result.points }}/10
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        {% else %}
+
+
+        <div class="no-history">
+
+            <h3>
+                No test attempted yet.
+            </h3>
+
+            <p>
+                Start your first test to see your report here.
+            </p>
+
+            <a href="{% url 'myday:test1' %}">
+                Start Test 1
+            </a>
+
+        </div>
+
+
+        {% endif %}
+
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>

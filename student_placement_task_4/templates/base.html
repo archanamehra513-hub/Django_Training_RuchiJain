@@ -1,0 +1,660 @@
+<style>
+/* =========================
+   GLOBAL
+========================= */
+
+:root {
+  --primary: #5b5cf0;
+  --primary-dark: #4546d8;
+  --secondary: #8b5cf6;
+  --accent: #06b6d4;
+
+  --bg: #f5f7ff;
+  --card: #ffffff;
+  --text: #182033;
+  --muted: #737b8c;
+
+  --border: #e5e7f0;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --warning: #d97706;
+
+  --shadow: 0 12px 35px rgba(41, 48, 90, 0.10);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--text);
+
+  background:
+    radial-gradient(circle at 10% 20%, rgba(91,92,240,.13), transparent 25%),
+    radial-gradient(circle at 90% 10%, rgba(139,92,246,.12), transparent 25%),
+    linear-gradient(135deg, #f8f9ff, #eef1ff);
+
+  overflow-x: hidden;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+  height: 72px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 6%;
+
+  background: rgba(255,255,255,.88);
+  backdrop-filter: blur(15px);
+
+  border-bottom: 1px solid rgba(220,224,240,.8);
+
+  box-shadow: 0 5px 25px rgba(30,40,80,.07);
+
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+
+/* BRAND */
+
+nav a.brand {
+  color: var(--primary);
+
+  text-decoration: none;
+
+  font-size: 1.25rem;
+  font-weight: 800;
+
+  letter-spacing: -.5px;
+
+  transition: .3s;
+}
+
+nav a.brand:hover {
+  color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+
+/* RIGHT NAV */
+
+nav .right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: var(--muted);
+
+  font-size: .92rem;
+}
+
+nav .right span {
+  background: #f0f1ff;
+
+  padding: 8px 14px;
+
+  border-radius: 30px;
+
+  font-weight: 600;
+}
+
+nav .right a {
+  color: var(--primary);
+
+  text-decoration: none;
+
+  padding: 9px 15px;
+
+  border-radius: 9px;
+
+  font-weight: 600;
+
+  transition: .3s;
+}
+
+nav .right a:hover {
+  background: var(--primary);
+  color: white;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 7px 18px rgba(91,92,240,.25);
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+  max-width: 520px;
+
+  margin: 55px auto;
+
+  padding: 0 18px;
+
+  animation: fadeUp .6s ease;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+  position: relative;
+
+  background: rgba(255,255,255,.94);
+
+  border: 1px solid rgba(255,255,255,.9);
+
+  border-radius: 22px;
+
+  padding: 35px;
+
+  box-shadow: var(--shadow);
+
+  overflow: hidden;
+
+  transition: .35s ease;
+}
+
+
+/* TOP LINE */
+
+.card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 5px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--primary),
+      var(--secondary),
+      var(--accent)
+    );
+}
+
+.card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 20px 45px rgba(41,48,90,.15);
+}
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+h1,
+h2 {
+  margin-top: 0;
+
+  color: var(--text);
+
+  letter-spacing: -.6px;
+}
+
+h1 {
+  font-size: 2rem;
+
+  font-weight: 800;
+
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.45rem;
+
+  margin-bottom: 12px;
+}
+
+p {
+  line-height: 1.7;
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+label {
+  display: block;
+
+  margin: 18px 0 7px;
+
+  font-size: .9rem;
+
+  font-weight: 700;
+
+  color: #30374a;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+input {
+  width: 100%;
+
+  padding: 13px 15px;
+
+  background: #fafbff;
+
+  border: 1px solid var(--border);
+
+  border-radius: 11px;
+
+  font-size: 1rem;
+
+  color: var(--text);
+
+  transition: .3s;
+}
+
+input::placeholder {
+  color: #a1a7b5;
+}
+
+input:hover {
+  border-color: #b9bdf0;
+}
+
+input:focus {
+  outline: none;
+
+  background: white;
+
+  border-color: var(--primary);
+
+  box-shadow:
+    0 0 0 4px rgba(91,92,240,.12);
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn {
+  display: inline-block;
+
+  margin-top: 22px;
+
+  padding: 13px 24px;
+
+  border: none;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--secondary)
+    );
+
+  color: white;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 8px 20px rgba(91,92,240,.25);
+
+  transition: .3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 13px 28px rgba(91,92,240,.32);
+}
+
+.btn:active {
+  transform: scale(.98);
+}
+
+
+/* SECONDARY BUTTON */
+
+.btn.secondary {
+  background: #eef0f7;
+
+  color: var(--text);
+
+  box-shadow: none;
+}
+
+.btn.secondary:hover {
+  background: #e2e5ef;
+
+  box-shadow: 0 7px 15px rgba(30,40,70,.08);
+}
+
+
+/* FULL BUTTON */
+
+.btn.block {
+  width: 100%;
+
+  text-align: center;
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.errorlist {
+  list-style: none;
+
+  margin: 7px 0 0;
+
+  padding: 0;
+
+  color: var(--danger);
+
+  font-size: .85rem;
+}
+
+
+/* =========================
+   MESSAGES
+========================= */
+
+.msg {
+  padding: 13px 16px;
+
+  margin-bottom: 16px;
+
+  border-radius: 11px;
+
+  font-size: .94rem;
+
+  font-weight: 500;
+
+  animation: slideDown .4s ease;
+}
+
+.msg.success {
+  background: #e9f9ef;
+
+  color: #15803d;
+
+  border: 1px solid #c7efd4;
+}
+
+.msg.error {
+  background: #fef0f0;
+
+  color: #b91c1c;
+
+  border: 1px solid #f5caca;
+}
+
+.msg.warning {
+  background: #fff7e5;
+
+  color: #b45309;
+
+  border: 1px solid #f4dfad;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.muted {
+  color: var(--muted);
+
+  font-size: .92rem;
+}
+
+.center {
+  text-align: center;
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+table {
+  width: 100%;
+
+  border-collapse: separate;
+
+  border-spacing: 0;
+
+  margin-top: 16px;
+
+  font-size: .9rem;
+
+  border: 1px solid var(--border);
+
+  border-radius: 13px;
+
+  overflow: hidden;
+}
+
+th,
+td {
+  text-align: left;
+
+  padding: 12px 10px;
+
+  border-bottom: 1px solid #edf0f6;
+}
+
+th {
+  background: #f1f2ff;
+
+  color: #343b54;
+
+  font-weight: 700;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover td {
+  background: #fafaff;
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eef0f7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b8bdd4;
+
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+
+/* =========================
+   SELECTION
+========================= */
+
+::selection {
+  background: var(--primary);
+
+  color: white;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes slideDown {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  nav {
+    height: 65px;
+
+    padding: 0 18px;
+  }
+
+  nav a.brand {
+    font-size: 1.05rem;
+  }
+
+  nav .right {
+    gap: 5px;
+  }
+
+  nav .right span {
+    display: none;
+  }
+
+  nav .right a {
+    padding: 7px 9px;
+
+    font-size: .82rem;
+  }
+
+  main {
+    margin: 30px auto;
+
+    padding: 0 14px;
+  }
+
+  .card {
+    padding: 26px 20px;
+
+    border-radius: 18px;
+  }
+
+  h1 {
+    font-size: 1.65rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  table {
+    display: block;
+
+    overflow-x: auto;
+
+    white-space: nowrap;
+  }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+  nav {
+    padding: 0 10px;
+  }
+
+  nav a.brand {
+    font-size: .92rem;
+  }
+
+  nav .right a {
+    padding: 6px 7px;
+  }
+
+  .card {
+    padding: 22px 16px;
+  }
+
+  input {
+    padding: 12px;
+  }
+
+  .btn {
+    padding: 12px 18px;
+  }
+
+}
+
+</style>

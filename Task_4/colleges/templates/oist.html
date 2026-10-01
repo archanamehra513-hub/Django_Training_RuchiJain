@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OIST | College Connect</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #04130e;
+            color: white;
+        }
+
+        nav {
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: #061a13;
+            border-bottom: 1px solid #164e3b;
+
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #34d399;
+        }
+
+        nav a {
+            color: #ccc;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        nav a:hover {
+            color: #34d399;
+        }
+
+        .hero {
+            min-height: 550px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            background:
+                radial-gradient(circle,
+                #065f46,
+                #04130e 65%);
+        }
+
+        .hero h1 {
+            font-size: 80px;
+            color: #34d399;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+            margin-top: 15px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 20px auto;
+
+            color: #9ca3af;
+            line-height: 1.7;
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 90px 25px;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .heading h2 {
+            font-size: 42px;
+        }
+
+        .heading p {
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .features {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .feature {
+            padding: 35px;
+
+            background: #071f17;
+
+            border: 1px solid #164e3b;
+
+            border-radius: 22px;
+
+            transition: 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+
+            border-color: #34d399;
+
+            box-shadow: 0 15px 40px #0008;
+        }
+
+        .feature-icon {
+            font-size: 45px;
+        }
+
+        .feature h3 {
+            margin: 15px 0 10px;
+        }
+
+        .feature p {
+            color: #8fa69d;
+            line-height: 1.6;
+        }
+
+        .quote {
+            margin-top: 60px;
+
+            text-align: center;
+
+            padding: 45px;
+
+            border-radius: 25px;
+
+            background: linear-gradient(
+                135deg,
+                #064e3b,
+                #052e24
+            );
+
+            border: 1px solid #166534;
+        }
+
+        .quote h2 {
+            color: #6ee7b7;
+            font-size: 30px;
+        }
+
+        .quote p {
+            margin-top: 15px;
+            color: #aaa;
+        }
+
+        footer {
+            padding: 30px;
+
+            text-align: center;
+
+            color: #777;
+
+            border-top: 1px solid #164e3b;
+        }
+
+        @media(max-width:800px) {
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 55px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <nav>
+
+        <div class="logo">
+            🏛️ College<span>Connect</span>
+        </div>
+
+        <div>
+
+            <a href="/">Home</a>
+
+            <a href="/sistec/">SISTec</a>
+
+            <a href="/lnct/">LNCT</a>
+
+            <a href="/oist/">OIST</a>
+
+        </div>
+
+    </nav>
+
+
+    <section class="hero">
+
+        <div>
+
+            <h1>OIST</h1>
+
+            <h2>Learn Today • Lead Tomorrow</h2>
+
+            <p>
+                Explore an environment built around learning,
+                technology, creativity and personal growth.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="section">
+
+
+        <div class="heading">
+
+            <h2>Discover OIST</h2>
+
+            <p>
+                More than education — a journey of growth.
+            </p>
+
+        </div>
+
+
+        <div class="features">
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🌱
+                </div>
+
+                <h3>Personal Growth</h3>
+
+                <p>
+                    Develop confidence, communication and
+                    skills beyond the classroom.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    💻
+                </div>
+
+                <h3>Technology</h3>
+
+                <p>
+                    Explore modern technology and discover
+                    new possibilities.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🚀
+                </div>
+
+                <h3>Future Ready</h3>
+
+                <p>
+                    Prepare yourself for opportunities
+                    in the professional world.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="quote">
+
+            <h2>
+                "Learn. Create. Lead."
+            </h2>
+
+            <p>
+                Every skill you build today becomes a part
+                of your tomorrow.
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+    <footer>
+
+        OIST | CollegeConnect © 2026
+
+    </footer>
+
+
+</body>
+
+</html>

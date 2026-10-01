@@ -1,0 +1,284 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Online Testing System</title>
+
+    <link rel="stylesheet"
+          href="{% static 'mycss.css' %}">
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>
+            Online Testing System
+        </h1>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="{% url 'myday:home' %}">
+            Home
+        </a>
+
+        {% if user.is_authenticated %}
+
+            <a href="{% url 'myday:test_history' %}">
+                Test History
+            </a>
+
+            <a href="{% url 'myday:logout' %}">
+                Logout
+            </a>
+
+        {% else %}
+
+            <a href="{% url 'myday:signup' %}">
+                Sign Up
+            </a>
+
+            <a href="{% url 'myday:login' %}">
+                Login
+            </a>
+
+        {% endif %}
+
+    </nav>
+
+
+    <!-- MESSAGES -->
+
+    {% if messages %}
+
+        {% for message in messages %}
+
+            <div class="message">
+                {{ message }}
+            </div>
+
+        {% endfor %}
+
+    {% endif %}
+
+
+    <!-- MAIN -->
+
+    <div class="home-content">
+
+
+        <!-- LEFT -->
+
+        <div class="welcome-section">
+
+            {% if user.is_authenticated %}
+
+                <h2>
+                    Welcome {{ user.first_name|default:user.username }},
+                </h2>
+
+            {% else %}
+
+                <h2>
+                    Welcome pppp,
+                </h2>
+
+            {% endif %}
+
+
+            <h3>
+                to your page
+            </h3>
+
+
+            <div class="test-menu">
+
+                {% if user.is_authenticated %}
+
+                    <a href="{% url 'myday:test1' %}">
+                        Test 1
+                    </a>
+
+                    <a href="{% url 'myday:test2' %}">
+                        Test 2
+                    </a>
+
+                    <a href="{% url 'myday:test3' %}">
+                        Test 3
+                    </a>
+
+                {% else %}
+
+                    <a href="{% url 'myday:login' %}">
+                        Test 1
+                    </a>
+
+                    <a href="{% url 'myday:login' %}">
+                        Test 2
+                    </a>
+
+                    <a href="{% url 'myday:login' %}">
+                        Test 3
+                    </a>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT LOGIN -->
+
+        <div class="login-card">
+
+
+            {% if user.is_authenticated %}
+
+                <div class="logged-in">
+
+                    <div class="user-icon">
+                        ✓
+                    </div>
+
+                    <h2>
+                        You are logged in
+                    </h2>
+
+                    <p>
+                        Welcome,
+                        <strong>
+                            {{ user.username }}
+                        </strong>
+                    </p>
+
+
+                    <a class="big-button"
+                       href="{% url 'myday:test1' %}">
+
+                        Start Test
+
+                    </a>
+
+
+                    <a class="secondary-button"
+                       href="{% url 'myday:test_history' %}">
+
+                        View Test History
+
+                    </a>
+
+                </div>
+
+
+            {% else %}
+
+
+                <h2>
+                    Login
+                </h2>
+
+
+                <form method="POST">
+
+                    {% csrf_token %}
+
+
+                    <label>
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        name="username"
+                        placeholder="Enter username"
+                        required
+                    >
+
+
+                    <label>
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Enter password"
+                        required
+                    >
+
+
+                    <div class="form-buttons">
+
+                        <button type="submit">
+                            Login
+                        </button>
+
+                        <button
+                            type="reset"
+                            class="clear">
+
+                            Clear
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+
+                <div class="signup-text">
+
+                    <p>
+                        Don't have an account?
+                    </p>
+
+                    <a href="{% url 'myday:signup' %}">
+                        Click here to Sign Up
+                    </a>
+
+                </div>
+
+            {% endif %}
+
+
+        </div>
+
+    </div>
+
+
+    <footer>
+
+        Online Testing System © 2026
+
+    </footer>
+
+
+</div>
+
+
+</body>
+
+</html>

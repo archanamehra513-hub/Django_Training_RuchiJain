@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SISTec | College Connect</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #07111f;
+            color: white;
+        }
+
+        nav {
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #091525;
+            border-bottom: 1px solid #1d344d;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #22d3ee;
+        }
+
+        nav a {
+            color: #ccc;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        nav a:hover {
+            color: #22d3ee;
+        }
+
+        .hero {
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            background:
+                radial-gradient(circle at center,
+                #164e63,
+                #07111f 65%);
+        }
+
+        .hero h1 {
+            font-size: 80px;
+            color: #22d3ee;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            margin-top: 15px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 20px auto;
+            color: #9ca3af;
+            line-height: 1.7;
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 25px;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .heading h2 {
+            font-size: 40px;
+        }
+
+        .heading p {
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .boxes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .box {
+            padding: 35px;
+            border-radius: 20px;
+            background: #0d1b2a;
+            border: 1px solid #1d344d;
+            transition: 0.3s;
+        }
+
+        .box:hover {
+            transform: translateY(-8px);
+            border-color: #22d3ee;
+        }
+
+        .box div {
+            font-size: 40px;
+        }
+
+        .box h3 {
+            margin: 15px 0 10px;
+        }
+
+        .box p {
+            color: #8d99a6;
+            line-height: 1.6;
+        }
+
+        footer {
+            padding: 30px;
+            text-align: center;
+            color: #777;
+            border-top: 1px solid #1d344d;
+        }
+
+        @media(max-width:800px) {
+            .boxes {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 55px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="logo">
+            🏫 College<span>Connect</span>
+        </div>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/sistec/">SISTec</a>
+            <a href="/lnct/">LNCT</a>
+            <a href="/oist/">OIST</a>
+        </div>
+
+    </nav>
+
+
+    <section class="hero">
+
+        <div>
+
+            <h1>SISTec</h1>
+
+            <h2>Technology • Innovation • Excellence</h2>
+
+            <p>
+                Explore the world of technology, innovation and
+                professional development at SISTec.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="section">
+
+        <div class="heading">
+
+            <h2>What Makes SISTec Special?</h2>
+
+            <p>
+                A campus designed to encourage learning and innovation.
+            </p>
+
+        </div>
+
+
+        <div class="boxes">
+
+            <div class="box">
+
+                <div>💻</div>
+
+                <h3>Technology</h3>
+
+                <p>
+                    Explore modern technologies and develop
+                    practical technical skills.
+                </p>
+
+            </div>
+
+
+            <div class="box">
+
+                <div>💡</div>
+
+                <h3>Innovation</h3>
+
+                <p>
+                    Turn creative ideas into meaningful projects
+                    and solutions.
+                </p>
+
+            </div>
+
+
+            <div class="box">
+
+                <div>🚀</div>
+
+                <h3>Career</h3>
+
+                <p>
+                    Build professional skills and prepare for
+                    future opportunities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        SISTec | CollegeConnect © 2026
+    </footer>
+
+</body>
+
+</html>

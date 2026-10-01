@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Result{% endblock %}
+{% block content %}
+<div class="card center">
+  <h2>Prediction Result</h2>
+  {% if result.placed %}
+    <div style="font-size:3.5rem">🎉</div>
+    <h1 style="color:var(--ok)">Placed</h1>
+    <p>Great news — the model predicts this student <b>will be placed</b>.</p>
+  {% else %}
+    <div style="font-size:3.5rem">📚</div>
+    <h1 style="color:var(--bad)">Not Placed</h1>
+    <p>The model predicts this student <b>may not be placed</b>. Improving CGPA and profile score can help.</p>
+  {% endif %}
+  {% if result.confidence is not None %}<p class="muted">Model confidence: {% widthratio result.confidence 1 100 %}%</p>{% endif %}
+  <table>
+    <tr><th>CGPA</th><td>{{ data.cgpa }}</td></tr>
+    <tr><th>IQ</th><td>{{ data.iq|floatformat:0 }}</td></tr>
+    <tr><th>Profile Score</th><td>{{ data.profile_score|floatformat:0 }}</td></tr>
+  </table>
+  <a class="btn" href="{% url 'predict' %}">Predict another</a>
+</div>
+{% endblock %}

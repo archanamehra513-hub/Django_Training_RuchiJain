@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+
+</head>
+
+<body style="
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+">
+
+    <div style="
+        width: 400px;
+        margin: 80px auto;
+        padding: 35px;
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    ">
+
+        <h1 style="
+            text-align: center;
+            color: #1f2937;
+            margin-bottom: 30px;
+        ">
+            Login Page
+        </h1>
+
+        <form action="{% url 'loginvalidation' %}" method="post">
+
+            {% csrf_token %}
+
+            <label style="
+                font-weight: bold;
+                color: #374151;
+            ">
+                Username:
+            </label>
+
+            <input type="text" name="username" required style="
+                width: 100%;
+                padding: 12px;
+                margin-top: 8px;
+                margin-bottom: 20px;
+                box-sizing: border-box;
+                border: 1px solid #d1d5db;
+                border-radius: 6px;
+            ">
+
+            <label style="
+                font-weight: bold;
+                color: #374151;
+            ">
+                Password:
+            </label>
+
+            <input type="password" name="password" required style="
+                width: 100%;
+                padding: 12px;
+                margin-top: 8px;
+                margin-bottom: 20px;
+                box-sizing: border-box;
+                border: 1px solid #d1d5db;
+                border-radius: 6px;
+            ">
+
+            <input type="submit" value="Login" style="
+                width: 100%;
+                padding: 12px;
+                background-color: #2563eb;
+                color: white;
+                border: none;
+                border-radius: 6px;
+                font-size: 16px;
+                cursor: pointer;
+            ">
+
+            <p style="
+                color: red;
+                text-align: center;
+                margin-top: 15px;
+            ">
+                {{erg}}
+            </p>
+
+        </form>
+
+        <a href="{% url 'signup' %}" style="
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #2563eb;
+            text-decoration: none;
+        ">
+            Create New User
+        </a>
+
+    </div>
+
+</body>
+
+</html> 

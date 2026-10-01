@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shopping Hub</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'mycss.css' %}">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fff7e6, #f3f0ff);
+            color: #222;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        /* Header */
+
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 35px 20px;
+            background: linear-gradient(135deg, #ff6a00, #ee0979);
+            color: white;
+        }
+
+        header h1 {
+            font-size: 42px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+
+        /* Main Container */
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 45px 20px;
+        }
+
+        .container h2 {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 35px;
+        }
+
+
+        /* Shopping Cards */
+
+        .shopping {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+
+        .card {
+            width: 300px;
+            min-height: 430px;
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+
+            text-align: center;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            transition: 0.3s;
+        }
+
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.20);
+        }
+
+
+        /* Images */
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            padding: 20px;
+            display: block;
+        }
+
+
+        /* Card Heading */
+
+        .card h3 {
+            width: 100%;
+            text-align: center;
+            font-size: 25px;
+            margin: 10px 0;
+        }
+
+
+        /* Card Paragraph */
+
+        .card p {
+            width: 100%;
+            text-align: center;
+            color: #666;
+            padding: 0 20px;
+            line-height: 1.5;
+        }
+
+
+        /* Buttons */
+
+        .btn {
+            display: inline-block;
+            margin-top: auto;
+            margin-bottom: 25px;
+
+            padding: 12px 28px;
+
+            background: #ff6a00;
+            color: white;
+
+            text-decoration: none;
+            border-radius: 25px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ee0979;
+            transform: scale(1.05);
+        }
+
+
+        /* Video */
+
+        .video-section {
+            width: 90%;
+            max-width: 900px;
+            margin: 20px auto 60px;
+            text-align: center;
+        }
+
+        .video-section h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .video-section video {
+            display: block;
+            width: 100%;
+            max-height: 500px;
+            margin: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* Footer */
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+            background: #222;
+            color: white;
+        }
+
+
+        /* Mobile */
+
+        @media (max-width: 700px) {
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            .container {
+                padding: 35px 15px;
+            }
+
+            .container h2 {
+                font-size: 25px;
+            }
+
+            .shopping {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .video-section {
+                width: 95%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>🛍️ Shopping Hub</h1>
+
+        <p>
+            Everything You Love, Just One Click Away!
+        </p>
+
+    </header>
+
+
+    <!-- Shopping Section -->
+
+    <div class="container">
+
+        <h2>
+            ✨ Explore Your Favourite Stores
+        </h2>
+
+
+        <div class="shopping">
+
+
+            <!-- Amazon -->
+
+            <div class="card">
+
+                <img src="{% static 'amazon.jpeg' %}"
+                     alt="Amazon">
+
+                <h3>Amazon</h3>
+
+                <p>
+                    Discover millions of products
+                    at great prices.
+                </p>
+
+                <a href="https://www.amazon.in/"
+                   target="_blank"
+                   class="btn">
+
+                    Shop on Amazon
+
+                </a>
+
+            </div>
+
+
+            <!-- Flipkart -->
+
+            <div class="card">
+
+                <img src="{% static 'flipkart.jpeg' %}"
+                     alt="Flipkart">
+
+                <h3>Flipkart</h3>
+
+                <p>
+                    Find amazing deals,
+                    electronics and fashion.
+                </p>
+
+                <a href="https://www.flipkart.com/"
+                   target="_blank"
+                   class="btn">
+
+                    Shop on Flipkart
+
+                </a>
+
+            </div>
+
+
+            <!-- Meesho -->
+
+            <div class="card">
+
+                <img src="{% static 'Meesho.jpeg' %}"
+                     alt="Meesho">
+
+                <h3>Meesho</h3>
+
+                <p>
+                    Shop fashion, lifestyle
+                    and more at affordable prices.
+                </p>
+
+                <a href="https://www.meesho.com/"
+                   target="_blank"
+                   class="btn">
+
+                    Shop on Meesho
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- Video Section -->
+
+    <section class="video-section">
+
+        <h2>
+            🎥 Let's Go Shopping!
+        </h2>
+
+        <video controls autoplay muted loop>
+
+            <source
+                src="{% static 'ShoppingV.mp4' %}"
+                type="video/mp4">
+
+            Your browser does not support
+            the video tag.
+
+        </video>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            🛒 Shopping Hub |
+            Shop Smart • Shop Easy • Shop More
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up</title>
+
+</head>
+
+<body style="
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+">
+
+    <div style="
+        width: 400px;
+        margin: 60px auto;
+        padding: 35px;
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    ">
+
+        <h1 style="
+            text-align: center;
+            color: #1f2937;
+            margin-bottom: 30px;
+        ">
+            Sign Up Page
+        </h1>
+
+        <form action="{% url 'saveuser' %}" method="post">
+
+            {% csrf_token %}
+
+            <label style="
+                font-weight: bold;
+                color: #374151;
+            ">
+                Username:
+            </label>
+
+            <input type="text" name="username" required style="
+                width: 100%;
+                padding: 12px;
+                margin-top: 8px;
+                margin-bottom: 10px;
+                box-sizing: border-box;
+                border: 1px solid #d1d5db;
+                border-radius: 6px;
+            ">
+
+            <span style="
+                color: red;
+                font-size: 14px;
+            ">
+                {{errormsg}}
+            </span>
+
+            <br><br>
+
+            <label style="
+                font-weight: bold;
+                color: #374151;
+            ">
+                Password:
+            </label>
+
+            <input type="password" name="password" required style="
+                width: 100%;
+                padding: 12px;
+                margin-top: 8px;
+                margin-bottom: 20px;
+                box-sizing: border-box;
+                border: 1px solid #d1d5db;
+                border-radius: 6px;
+            ">
+
+            <label style="
+                font-weight: bold;
+                color: #374151;
+            ">
+                Name:
+            </label>
+
+            <input type="text" name="name" required style="
+                width: 100%;
+                padding: 12px;
+                margin-top: 8px;
+                margin-bottom: 25px;
+                box-sizing: border-box;
+                border: 1px solid #d1d5db;
+                border-radius: 6px;
+            ">
+
+            <input type="submit" value="Sign-Up" style="
+                width: 100%;
+                padding: 12px;
+                background-color: #2563eb;
+                color: white;
+                border: none;
+                border-radius: 6px;
+                font-size: 16px;
+                cursor: pointer;
+            ">
+
+        </form>
+
+        <a href="{% url 'login' %}" style="
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #2563eb;
+            text-decoration: none;
+        ">
+            Already Registered
+        </a>
+
+    </div>
+
+</body>
+
+</html>

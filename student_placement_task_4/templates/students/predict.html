@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Placement Prediction{% endblock %}
+{% block content %}
+<div class="card">
+  <h2>Student Placement Prediction</h2>
+  <form method="post">{% csrf_token %}
+    {% include "students/_form_fields.html" %}
+    <button class="btn block" type="submit">Submit</button>
+  </form>
+  {% if history %}
+  <h3 style="margin-top:28px">Recent predictions</h3>
+  <table>
+    <tr><th>CGPA</th><th>IQ</th><th>Profile</th><th>Result</th></tr>
+    {% for h in history %}
+    <tr><td>{{ h.cgpa }}</td><td>{{ h.iq|floatformat:0 }}</td><td>{{ h.profile_score|floatformat:0 }}</td>
+        <td>{% if h.placed %}✅ Placed{% else %}❌ Not placed{% endif %}</td></tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+</div>
+{% endblock %}

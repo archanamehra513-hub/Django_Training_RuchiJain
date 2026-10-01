@@ -1,0 +1,172 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>
+        Test {{ test_number }}
+    </title>
+
+    <link rel="stylesheet"
+          href="{% static 'mycss.css' %}">
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+    <h1>
+        Online Testing System
+    </h1>
+
+
+    <nav>
+
+        <a href="{% url 'myday:home' %}">
+            Home
+        </a>
+
+        <a href="{% url 'myday:test_history' %}">
+            Test History
+        </a>
+
+        <a href="{% url 'myday:logout' %}">
+            Logout
+        </a>
+
+    </nav>
+
+
+    <div class="test-page">
+
+        <h2>
+            Test {{ test_number }}
+        </h2>
+
+        <p>
+            Answer all questions and submit the test.
+        </p>
+
+
+        {% if questions %}
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+
+                {% for question in questions %}
+
+                    <div class="question-card">
+
+                        <h3>
+
+                            Q{{ forloop.counter }}.
+                            {{ question.question }}
+
+                        </h3>
+
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="question_{{ question.id }}"
+                                value="A"
+                                required
+                            >
+
+                            A. {{ question.option_a }}
+
+                        </label>
+
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="question_{{ question.id }}"
+                                value="B"
+                            >
+
+                            B. {{ question.option_b }}
+
+                        </label>
+
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="question_{{ question.id }}"
+                                value="C"
+                            >
+
+                            C. {{ question.option_c }}
+
+                        </label>
+
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="question_{{ question.id }}"
+                                value="D"
+                            >
+
+                            D. {{ question.option_d }}
+
+                        </label>
+
+                    </div>
+
+                {% endfor %}
+
+
+                <button
+                    type="submit"
+                    class="submit-test">
+
+                    Submit Test
+
+                </button>
+
+            </form>
+
+
+        {% else %}
+
+            <div class="empty-box">
+
+                <h3>
+                    No questions available.
+                </h3>
+
+                <p>
+                    Please add questions from Django Admin.
+                </p>
+
+                <a href="/admin/">
+                    Open Admin Panel
+                </a>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+
+</div>
+
+</body>
+
+</html>
